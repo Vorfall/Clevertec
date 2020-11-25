@@ -1,0 +1,122 @@
+
+*{
+    margin:0;
+    padding:0;
+    outline:none;
+
+}
+
+
+body, html {
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  body {
+    background-color: #ffffff00;
+    font-family: Trebuchet MS, Helvetica;
+  }
+  
+
+  header {
+    width: 100%;
+    
+
+
+    
+  }
+.logo img{
+    padding: 1%;
+   
+    height: 150px; /*125px*/
+    
+}
+
+.logo a{
+    border: 5px solid #362727fa;  
+}
+@media (min-width: 800px)
+{
+  #switchLogo{
+
+    font-size: 1.7em;
+    float: right;
+    width: 27%;
+}
+}
+
+
+
+#main{  
+      background-color: #48383817;
+      padding-top: 3%;
+
+      padding-bottom: 3%;
+      text-align: center;  
+
+}
+
+
+#main h1{
+    font-size: 4.0em;
+}
+
+#main h2{
+    font-size: 3.5em;
+    color:#6C5E53;
+}
+
+#main h3{
+    font-size: 3em;
+    color:#AA967E;
+}
+
+#main h4{
+    font-size: 2em;
+    color:#C2A273;
+    width: 115%;
+}   
+#bottom{
+    margin-top: 25%;
+    width: 115%;
+    height: 800px;
+    background-color: #000000;
+}
+
+footer{
+    width: 100%; 
+    background-color: #6c5e5396;
+}
+
+
+footer img{
+    padding-top: 1%;
+    
+    float: left;
+    width:  25%;
+    height: 230px;
+   
+}
+
+@media (max-width: 1330px) {
+    #logo {
+      margin-top: 15px;
+      width: 100%;
+      font-size: 1.5em;
+    }
+  
+    #about {
+      float: left;
+      width: 100%;
+    }
+  }
+
+  button {
+    width: 100%;
+    background-color: #292929;
+    border: 5px solid #362727fa;  
+    color:#C2A273;
+    height: 50px;
+    font-size: 2.5em;
+}

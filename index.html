@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    
+</head>
+<body>
+    <header>
+       <div class="logo"><img id="LogoBand" src="logo/logoRammstein.png">
+
+       <div id="switchLogo">
+        <h3>Choose a logo from the list:</h3>
+       
+        <a title="Rammstein" onclick="my_click('Rammstein')">Rammstein</a>;
+        <a title="InfectedRain" onclick="my_click('InfectedRain')">Infected Rain</a>;
+        <a  title="ArchEnemy" onclick="my_click('ArchEnemy')">Arch Enemy</a>;
+        
+        
+        </div>
+<hr> 
+        <div id="main">
+            <h1>Trying hard now</h1>
+            <h2>it's so hard now<h2>
+            <h3>trying hard now</h3>
+            <h4>Lyrics from the movie<br> "Rocky"</h4>
+        </div>
+        <hr> 
+        </div>
+    </header>   
+    <footer>
+       <img src="concert/1.jpg" width = 400px alt="" id="concert1">
+       <img src="concert/1.jpg" width = 400px alt="" id="concert2">
+       <img src="concert/2.jpg" width = 400px alt="" id="concert3">
+       <img src="concert/2.jpg" width = 400px alt="" id="concert4">
+        <button class="but" onclick="refrechLocal()">Update from computer</button> 
+        <button class="but" onclick="refrechnNetwork()">Update from network</button>
+
+       
+    </footer>
+
+ 
+    <script>
+
+        function my_click(name)
+                {
+                    
+                    switch(name)
+                    {
+                        case 'Rammstein': 
+                        document.getElementById("LogoBand").src="logo/logoRammstein.png";
+                        break;
+    
+                        case 'InfectedRain': 
+                        document.getElementById("LogoBand").src="logo/logoInfectedRain.png";
+    
+                        break;
+    
+                        case 'ArchEnemy': 
+                        document.getElementById("LogoBand").src="logo/logoArchEnemy.png";
+                        break;
+    
+                    }   
+
+
+                
+                };
+
+        function refrechLocal(){
+                for(var i=1;i<=4;i++)
+                {  
+                document.getElementById(`concert${i}`).src=`concert/${Math.floor(Math.random() * 7)}.jpg`; 
+                }}
+
+        function refrechnNetwork(){
+           
+                const requestURL = 'https://jsonplaceholder.typicode.com/photos'
+
+                const xhr = new XMLHttpRequest()
+                
+                var temp1
+                var temp2
+                var temp3
+                var temp4
+
+                xhr.open('get', requestURL)
+                xhr.responseType='json'
+                xhr.onload = () =>
+                {
+                    temp1 =  xhr.response[Math.floor(Math.random() * 5000)].thumbnailUrl
+                    temp2 =  xhr.response[Math.floor(Math.random() * 5000)].thumbnailUrl
+                    temp3 =  xhr.response[Math.floor(Math.random() * 5000)].thumbnailUrl
+                    temp4 =  xhr.response[Math.floor(Math.random() * 5000)].thumbnailUrl
+
+                    document.getElementById(`concert1`).src=`${temp1}`; 
+                    document.getElementById(`concert2`).src=`${temp2}`; 
+                    document.getElementById(`concert3`).src=`${temp3}`; 
+                    document.getElementById(`concert4`).src=`${temp4}`; 
+                }
+
+                xhr.send();
+            
+            }
+                
+        </script>
+   
+</body>
+</html>
